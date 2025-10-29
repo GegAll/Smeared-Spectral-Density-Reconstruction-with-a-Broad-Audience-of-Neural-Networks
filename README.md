@@ -127,21 +127,9 @@ This step trains the models for both $\sigma=0.44$ and $\sigma=0.63$.
 
 After training, you can test your models on the mock datasets.
 
-1.  **Edit `submit_prediction_O3.sh`:**
-      * This script runs `predict_on_O3_mock_sigma.py` to test the **O(3) model**.
-      * Edit the `--account` and `source activate` lines as before.
-      * **Submit the O(3) Test:**
-        ```bash
-        sbatch submit_prediction_O3.sh
-        ```
-2.  **Edit `submit_prediction_delta.sh`:**
-      * This script runs `predict_on_delta_tanh.py` to test the **delta+continuum model**.
-      * Edit the `--account` and `source activate` lines.
-      * **Submit the Delta+Tanh Test:**
-        ```bash
-        sbatch submit_prediction_delta.sh
-        ```
-    > **Note:** When these jobs are finished, the `mock_predictions_sigma.../` directories will be populated with HDF5 files containing the prediction results.
+1.  **Run `predict_on_O3_mock_sigma.py` to test the **O(3) model**.
+2.  **Run `predict_on_delta_tanh.py` to test the **delta+continuum model**.
+    > **Note:** When these scripts are finished, the `mock_predictions_sigma.../` directories will be populated with HDF5 files containing the prediction results.
 
 ### Step 4: Analyze the Results
 
