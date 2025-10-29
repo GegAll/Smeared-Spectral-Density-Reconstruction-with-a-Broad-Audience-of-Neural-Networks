@@ -31,18 +31,18 @@ This repository is organized as follows:
 │   └── training_data_Nb...Nrho....hdf5
 │
 ├── trained_models_sigma44/
-│   ├── (This directory will be created by Step 2)
+│   ├── (This directory will be created by Step 2, but in this repository already trained versions are available)
 │   ├── Nmax/
 │   │   ├── replica_1_best.pth
 │   │   └── replica_1_best_history.csv
 │   └── ...
 │
 ├── trained_models_sigma63/
-│   ├── (This directory will be created by Step 2)
+│   ├── (This directory will be created by Step 2, but in this repository already trained versions are available)
 │   └── ...
 │
 ├── mock_predictions_sigma44/
-│   ├── (This directory will be created by Step 3)
+│   ├── (This directory will be created by Step 3, but in this repository predictions done with the trained models are available)
 │   └── O3_predictions_Nmax_sigma0.44.hdf5
 │
 ├── mock_predictions_sigma63/
@@ -51,10 +51,7 @@ This repository is organized as follows:
 ├── (Main Python Scripts)
 │   ├── generate_full_dataset_sigma.py  # Script for Step 1 (Data Generation)
 │   ├── hpc_train_sigma.py              # Script for Step 2 (Training Worker)
-│   ├── predict_on_O3_mock_sigma.py     # Script for Step 3 (O(3) Validation)
-│   ├── predict_on_delta_tanh.py      # Script for Step 3 (Delta+Tanh Validation)
-│   ├── analyze_O3_mock_sigma.py        # Script for Step 4 (O(3) Analysis)
-│   ├── analyze_delta_tanh_mock.py    # Script for Step 4 (Delta+Tanh Analysis)
+│   ├── Analysis.ipynb                  # Script for Steps 3 and 4 (O(3), Delta+Tanh Validation and Analysis)
 │
 ├── (Helper Python Scripts)
 │   ├── sigma_model_utils.py            # Kernels for sigma models (Eq. 32, etc.)
@@ -62,11 +59,11 @@ This repository is organized as follows:
 │   ├── prepare_training_data_T12.py    # Misc. helpers (Chebyshev functions)
 │   └── generate_delta_mock.py          # Helper for delta+tanh mock data
 │
-├── (Slurm Scripts)
+├── slurm_scripts
 │   ├── submit_generation_sigma.sh      # Slurm script for Step 1
 │   ├── submit_training_sigma.sh        # Slurm script for Step 2
 │   ├── submit_prediction_O3.sh         # Slurm script for Step 3 (O3)
-│   └── submit_prediction_delta.sh    # Slurm script for Step 3 (Delta+Tanh)
+│   └── submit_prediction_delta.sh      # Slurm script for Step 3 (Delta+Tanh)
 │
 └── README.md                           # This file
 ```
